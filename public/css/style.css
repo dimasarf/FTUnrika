@@ -29,3 +29,116 @@
     height: 1em;
     border-left: 6px  #2A1570;
 }
+
+.kotak-header
+{    
+    border-bottom:6px solid #2A1570;
+    width: 80%;
+    height: 0.3em;
+    position: absolute;
+    align-items: center;
+    
+}
+
+.header-section {
+    font-family: 'Arvo', Georgia, Times, serif;
+    border-bottom: 3px solid #F4C610;
+    /* position: absolute; As I've said, adding this allowed me to do so, but the result was far from ideal! */
+}
+
+.title {    
+    border-bottom: 3px solid #F4C610;
+    font-family: 'Arvo', Georgia, Times, serif; 
+}
+hr {
+    display: block;
+    margin-top: -0.6em;
+    margin-bottom: 0.5em;
+    margin-left: 5em;
+    margin-right: 5em;
+    border-style: inset;
+    border-width: 1.7px;
+    background-color:  #2A1570;
+  }
+.hr-profil {
+    display: block;
+    margin-top: -0.6em;
+    margin-bottom: 0.5em;
+    margin-left: 3.3em;
+    margin-right: 3.3em;
+    border-style: inset;
+    border-width: 1px;
+    background-color:  white;
+  }
+.kumpulan-berita
+{
+    margin-left: 5em;
+    margin-right: 5em;
+}
+
+.visi
+{
+    font-family: 'Arvo', Georgia, Times, serif; 
+    color: #F4C610;
+}
+
+.berita
+{
+    margin: 1em 3em 0em 3em 
+}
+
+.hr misi
+{
+    display: block;
+    margin-top: -0.6em;
+    margin-bottom: 0.5em;
+    margin-left: 3.3em;
+    margin-right: 3.3em;
+    border-style: inset;
+    border-width: 1px;
+    background-color:  #F4C610;
+}
+
+.isi-visi
+{
+    color: white;
+    margin-top: -2.2em;
+}
+
+.btn-lebih
+{
+    color: #444444;
+    font-family: 'Arvo', Georgia, Times, serif; 
+}
+
+.footer
+{
+    font-family: 'Crimson Text', Georgia, Times, serif;
+    font-size: 16px;
+}
+
+h5
+{
+    border-bottom: 3px solid #F4C610;
+    font-family: 'Arvo', Georgia, Times, serif; 
+    border-width: 4px;
+}
+
+.copyright
+{
+    font-family: 'Crimson Text', Georgia, Times, serif;
+    font-size: 16px;
+    color: white;
+}
+
+.hr-copyright
+{
+    display: block;
+    margin-top: -0.6em;
+    margin-bottom: 0.5em;
+    margin-left: 3.3em;
+    margin-right: 3.3em;
+    border-style: inset;
+    border-width: 0.7px;
+    background-color: #F4C610;
+}
