@@ -26,3 +26,14 @@ Route::get('/konten', function () {
 Route::get('/more', function () {
     return view('kumpulan-berita');
 });
+Route::get('/dashboard', function () {
+    return view('dashboard.dashboard-index');
+});
+
+Route::get('/konten-baru/{id}', 'Dashboard\KontenBaruController@index');
+Route::post('/konten-simpan', 'Dashboard\KontenBaruController@store');
+
+
+Route::get('/konten-arsip/{id}', 'Dashboard\KontnArsipController@index');
+
+
