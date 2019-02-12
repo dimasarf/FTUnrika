@@ -3,128 +3,56 @@
 <div class="row mt-3 ml-4" style="width: 100%">
         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 mt-4 arsip-berita">
             <h4 class="judul"> Arsip Berita</h4>
-            <hr>
-            <div class="arsips-berita mt-1">
-                <div class="d-inline-block ">
-                    <img src="/images/gambar 1.jpg" alt="" srcset="" class="img-fluid" width="250em;">
-                </div>
-                <div class="d-inline-block ml-5 mt-5" >
-                    <p class="arsip-berita-judul"><a href="">Judul</a></p>
-                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo mauris</p>
-                    <i class="fas fa-clock"></i>
-                    20.00
-                    &nbsp;
-                    <i class="fas fa-bookmark ml-2"></i>
-                    Kategori
-                </div>
-            </div>
-            <div class="arsips-berita ">
-                    <div class="d-inline-block ">
-                        <img src="/images/gambar 1.jpg" alt="" srcset="" class="img-fluid" width="250em;">
-                    </div>
-                    <div class="d-inline-block ml-5 mt-5" >
-                        <p class="arsip-berita-judul"><a href="">Judul</a></p>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo mauris</p>
-                        <i class="fas fa-clock"></i>
-                        20.00
-                        &nbsp;
-                        <i class="fas fa-bookmark ml-2"></i>
-                        Kategori
-                    </div>
-                </div>
-                <div class="arsips-berita ">
-                        <div class="d-inline-block ">
-                            <img src="/images/gambar 1.jpg" alt="" srcset="" class="img-fluid" width="250em;">
-                        </div>
-                        <div class="d-inline-block ml-5 mt-5" >
-                            <p class="arsip-berita-judul"><a href="">Judul</a></p>
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo mauris</p>
-                            <i class="fas fa-clock"></i>
-                            20.00
-                            &nbsp;
-                            <i class="fas fa-bookmark ml-2"></i>
-                            Kategori
-                        </div>
-                </div>
-                <div class="arsips-berita ">
-                        <div class="d-inline-block ">
-                            <img src="/images/gambar 1.jpg" alt="" srcset="" class="img-fluid" width="250em;">
-                        </div>
-                        <div class="d-inline-block ml-5 mt-5" >
-                            <p class="arsip-berita-judul"><a href="">Judul</a></p>
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo mauris</p>
-                            <i class="fas fa-clock"></i>
-                            20.00
-                            &nbsp;
-                            <i class="fas fa-bookmark ml-2"></i>
-                            Kategori
-                        </div>
-                </div>
+            <hr class="mb-4">
+            <?php if(!empty($kontens)): ?>
+            
+            
+                <table>
+                    <?php $__currentLoopData = $kontens; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $konten): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    
+                            <td class="pb-4">
+                                <p class="arsip-berita-judul"><a href="/konten/<?php echo e($konten->id); ?>"><?php echo e($konten->judul); ?></a></p>
+                                <p> <?php echo e(str_limit(strip_tags($konten->isi, 100))); ?></p>
+                                <i class="fas fa-clock"></i>
+                                <?php echo e($konten->created_at); ?>
+
+                                &nbsp;
+                                <i class="fas fa-bookmark ml-2"></i>
+                                <?php echo e($konten->kategori); ?>
+
+                            </td>
+                        </tr>
+                       
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </table>
+            <?php endif; ?>
+            <?php echo e($kontens->links()); ?>
+
+                
+                
         </div>
-        <div class="col-xs-3 col-sm-3col-md-3 col-lg-3 mt-4 ">
+        <div class="col-xs-4 col-sm-4 col-md-3 col-lg-3 mt-4 mr-4">
             <h5 class="header-widget col-lg-6 mr-auto ml-5 col-xs-2 col-sm-2 ">Berita Terkini</h5>
             <table class="table  tr-berita ml-5 ">
                 <tbody>
-                    <tr class="tr-berita">
-                        <td>
-                            <a href="">Judul Konten</a>
-                            <p>
-                                <i class="fas fa-clock"></i>
-                                20.00
-                                &nbsp;
-                                <i class="fas fa-bookmark"></i>
-                                Kategori
-                            </p>
-                        </td>
-                    </tr>
-                    <tr class="tr-berita">
-                        <td>
-                            <a href="">Judul Konten</a>
-                            <p>
-                                <i class="fas fa-clock"></i>
-                                20.00
-                                &nbsp;
-                                <i class="fas fa-bookmark"></i>
-                                Kategori
-                            </p>
-                        </td>
-                    </tr>
-                    <tr class="tr-berita">
-                        <td>
-                            <a href="">Judul Konten</a>
-                            <p>
-                                <i class="fas fa-clock"></i>
-                                20.00
-                                &nbsp;
-                                <i class="fas fa-bookmark"></i>
-                                Kategori
-                            </p>
-                        </td>
-                    </tr>
-                    <tr class="tr-berita">
-                        <td>
-                            <a href="">Judul Konten</a>
-                            <p>
-                                <i class="fas fa-clock"></i>
-                                20.00
-                                &nbsp;
-                                <i class="fas fa-bookmark"></i>
-                                Kategori
-                            </p>
-                        </td>
-                    </tr>
-                    <tr class="tr-berita">
-                        <td>
-                            <a href="">Judul Konten</a>
-                            <p>
-                                <i class="fas fa-clock"></i>
-                                20.00
-                                &nbsp;
-                                <i class="fas fa-bookmark"></i>
-                                Kategori
-                            </p>
-                        </td>
-                    </tr>
+                    <?php if(!empty($sideKontens)): ?>
+                        <?php $__currentLoopData = $sideKontens; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $sideKonten): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <tr class="tr-berita mr-4">
+                            <td>
+                                <a href=""><?php echo e($sideKonten->judul); ?></a>
+                                <p>
+                                    <i class="fas fa-clock"></i>
+                                    <?php echo e($sideKonten->created_at); ?>
+
+                                    &nbsp;
+                                    <i class="fas fa-bookmark"></i>
+                                    <?php echo e($sideKonten->kategori); ?>
+
+                                </p>
+                            </td>
+                        </tr>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    <?php endif; ?>
                 </tbody>
             </table>
         </div>

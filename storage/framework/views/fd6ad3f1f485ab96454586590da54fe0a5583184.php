@@ -75,7 +75,7 @@
       
 
       
-      <div class="row bg-unrika-ungu " style="height: 20em" >
+      <div class="row bg-unrika-ungu " >
         <div class="col-xs-4 col-lg-4 col-sm-4 col-md-4">
           <img src="/images/UNRIKALOGO.png" alt="" width="90em" class="ml-4 mt-5">
           <table class="ml-5 mt-3">
@@ -89,7 +89,7 @@
             </tr>
           </table>
         </div>
-        <div class="col-xs-2 col-lg-4 col-sm-2 col-md-4">
+        <div class="col-xs-4 col-lg-4 col-sm-4 col-md-4">
           <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
             <h5 class=" mt-3" style="color: white;">Layanan</h5>
             <table class="mt-3">
@@ -102,7 +102,7 @@
             </table>
           </div>
         </div>
-        <div class="col-xs-2 col-lg-4 col-sm-2 col-md-4">
+        <div class="col-xs-4 col-lg-4 col-sm-4 col-md-4">
           <div class="col-sm-5 col-md-5 col-lg-5 col-xs-5">
             <h5 class=" mt-3" style="color: white;">Penerimaan</h5>
             <table class="mt-3">
@@ -118,7 +118,7 @@
       </div>
       <div class="row bg-unrika-ungu">
         <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12">
-          <hr class="hr-copyright">
+          <hr class="hr-copyright mt-5">
           <p class="copyright ml-5">Copyright © 2019 Fakultas Teknik UNRIKA Batam. All Rights Reserved</p>   
         </div>
         

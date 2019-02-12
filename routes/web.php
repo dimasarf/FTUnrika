@@ -11,21 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('halamanDepan');
-});
+Route::get('/', 'HalamanDepanController@index');
 Route::get('/visi-misi', function () {
     return view('visi-misi');
 });
 Route::get('/organisasi', function () {
     return view('struktur-organisasi');
 });
-Route::get('/konten', function () {
-    return view('halaman-konten');
-});
-Route::get('/more', function () {
-    return view('kumpulan-berita');
-});
+Route::get('/konten/{id}', 'HalamanKontenController@index');
+Route::get('/more/{id}', 'MoreNewsController@index');
 Route::get('/dashboard', function () {
     return view('dashboard.dashboard-index');
 });
@@ -35,5 +29,7 @@ Route::post('/konten-simpan', 'Dashboard\KontenBaruController@store');
 
 
 Route::get('/konten-arsip/{id}', 'Dashboard\KontnArsipController@index');
+
+Route::get('/halaman-kelola/{id}', 'Dashboard\KelolaHalamanController@index');
 
 
