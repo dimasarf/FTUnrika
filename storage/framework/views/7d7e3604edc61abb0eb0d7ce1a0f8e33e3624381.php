@@ -22,8 +22,13 @@
   </div>
   <div class="row">
     <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center">
-      <p class="isi-visi">Menjadi fakultas yang unggul, kreatif dan mandiri di bidang teknik <br> mampu menghasilkan 
-        sarjana teknik untuk bersaing secara nasional pada tahun 2025</p>
+        <?php
+        {{
+            
+            $isi = new \Illuminate\Support\HtmlString($visi[0]->isi); 
+        }}
+      ?>
+      <p class="isi-visi"><?php echo e($isi); ?></p>
     </div>
   </div>
 
@@ -34,14 +39,13 @@
   </div>
   <div class="row">
     <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center">
-      <p class="isi-visi">1. Menyelenggarakan pengkajian dan pengembangan ilmu dalam bidang teknologi <br>
-        2. Melakukan dan mengembangkan penelitian bidang teknik yang dapat bermanfaat untuk akademik, <br>
-        masyarakat dan menghasilkan tenaga teknik yang berkualitas dan kompeten sesuai dengan yang diharapkan
-        dunia kerja <br>
-        3. Memperluas kerjasama dengan berbagai pihak yang meningkatkan <br> pelaksanaan Tri Dharma Perguruan Tinggi
-        khususnya yang berkaitan dengan bidan Teknik <br>
-        4. Meningkatkan peran institusi dalam memberikan kontribusi <br> pemikiran(pengabdian masyarakat) bagi kemajuan 
-        pembangunan di tingkat lokal dan nasional
+        <?php
+        {{
+            
+            $isi2 = new \Illuminate\Support\HtmlString($misi[0]->isi); 
+        }}
+      ?>
+      <p class="isi-visi"><?php echo e($isi2); ?>
 
       </p>
     </div>

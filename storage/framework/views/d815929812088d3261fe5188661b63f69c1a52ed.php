@@ -45,7 +45,7 @@
       <?php $__currentLoopData = $beritas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $berita): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <div class="col-lg-3 col-xs-3 col-sm-3 col-md-3 berita">
             <div class="card" style="width: 18rem; border-width: 0px;">
-              <img class="card-img-top" src="/images/gambar 2.jpg" alt="Card image cap">
+              
               <div class="card-body">
                 <h5 class="card-title"><?php echo e($berita->judul); ?></h5>
                 <p class="card-text"><?php echo e(str_limit(strip_tags($berita->isi, 100))); ?></p>
@@ -101,7 +101,7 @@
       <?php $__currentLoopData = $pengumumans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pengumuman): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
       <div class="col-lg-3 col-xs-3 col-sm-3 col-md-3 berita">
           <div class="card" style="width: 18rem; border-width: 0px;">
-            <img class="card-img-top" src="/images/gambar 2.jpg" alt="Card image cap">
+            
             <div class="card-body">
               <h5 class="card-title"><?php echo e($pengumuman->judul); ?></h5>
               <p class="card-text"><?php echo e(str_limit(strip_tags($pengumuman->isi, 100))); ?></p>

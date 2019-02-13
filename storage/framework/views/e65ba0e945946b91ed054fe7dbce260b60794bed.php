@@ -300,13 +300,18 @@
 										</a>
 										<ul class="nav nav-children">
 											<li>
-												<a href="pages-signup.html">
+												<a href="/halaman-kelola/2">
 													 Visi Misi
 												</a>
 											</li>
 											<li>
-												<a href="pages-signin.html">
-													 Struktur Organisasi
+												<a href="/halaman-kelola/4">
+													 Profil
+												</a>
+											</li>
+											<li>
+												<a href="/halaman-kelola/6">
+													Struktur Organisasi
 												</a>
 											</li>
 											<li>
@@ -315,7 +320,7 @@
 												</a>
 											</li>
 											<li>
-												<a href="pages-lock-screen.html">
+												<a href="/halaman-kelola/7">
 													 Daftar Dosen
 												</a>
 											</li>

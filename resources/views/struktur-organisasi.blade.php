@@ -11,7 +11,17 @@
   </div>
   <div class="row">
     <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center">
-      <img src="/images/Struktur-2.bmp" class="mb-5" alt="" width="1000em" height="1000em" class="img-fluid">
+        @if(count($konten) > 0)
+          @php
+              {{
+                  
+                  $isi = new \Illuminate\Support\HtmlString($konten[0]->isi); 
+              }}
+          @endphp
+          <p>{{$isi}}</p>
+        @else
+          <p></p>
+        @endif
     </div>
   </div>
   {{-- END Pengumuman --}}

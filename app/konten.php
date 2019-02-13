@@ -40,5 +40,6 @@ class konten extends Model
                    ->first();
         return $kontens;
     }
+    
 
 }

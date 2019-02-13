@@ -46,7 +46,7 @@
       @foreach($beritas as $berita)
         <div class="col-lg-3 col-xs-3 col-sm-3 col-md-3 berita">
             <div class="card" style="width: 18rem; border-width: 0px;">
-              <img class="card-img-top" src="/images/gambar 2.jpg" alt="Card image cap">
+              {{-- <img class="card-img-top" src="/images/gambar 2.jpg" alt="Card image cap"> --}}
               <div class="card-body">
                 <h5 class="card-title">{{$berita->judul}}</h5>
                 <p class="card-text">{{str_limit(strip_tags($berita->isi, 100)) }}</p>
@@ -101,7 +101,7 @@
       @foreach($pengumumans as $pengumuman)
       <div class="col-lg-3 col-xs-3 col-sm-3 col-md-3 berita">
           <div class="card" style="width: 18rem; border-width: 0px;">
-            <img class="card-img-top" src="/images/gambar 2.jpg" alt="Card image cap">
+            {{-- <img class="card-img-top" src="/images/gambar 2.jpg" alt="Card image cap"> --}}
             <div class="card-body">
               <h5 class="card-title">{{$pengumuman->judul}}</h5>
               <p class="card-text">{{str_limit(strip_tags($pengumuman->isi, 100)) }}</p>

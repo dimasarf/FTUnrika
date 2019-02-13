@@ -8,64 +8,39 @@
                     <a href="#" class="fa fa-caret-down"></a>
                     <a href="#" class="fa fa-times"></a>
                 </div>
-
-                <h2 class="panel-title">Visi</h2>
+            @if(count($visi) > 0)
+                <h2 class="panel-title">{{$visi[0]->judul}}</h2>
+            @else
+                <h2 class="panel-title"></h2>
+            @endif
+            
             </header>
             <div class="panel-body">
                 <div class="d-flex justify-content-center">
-                    @php
-                        {{
-                            
-                            $isi = new \Illuminate\Support\HtmlString($visi[0]->isi); 
-                        }}
-                    @endphp
-                    <p>{{$isi}}</p>
+                    @if(count($visi) > 0)
+                        @php
+                            {{
+                                
+                                $isi = new \Illuminate\Support\HtmlString($visi[0]->isi); 
+                            }}
+                        @endphp
+                        <p>{{$isi}}</p>
+                    @else
+                        <p></p>
+                    @endif
+                    
                 </div>
                 <div class="col text-center">
-                    <button type="submit" class="btn btn-primary">Edit</button>
+                    @if(count($visi) > 0)
+                        <a href="/edit/{{$visi[0]->id}}" class="btn btn-primary">Edit</a>
+                    @else
+                        <a href="/konten-baru/{{$idKategori}}" class="btn btn-primary">Baru</a>
+                    @endif
                 </div>
             </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-6 col-lg-12 col-xl-6">
-        <section class="panel">
-                <header class="panel-heading">
-                    <div class="panel-actions">
-                        <a href="#" class="fa fa-caret-down"></a>
-                        <a href="#" class="fa fa-times"></a>
-                    </div>
-    
-                    <h2 class="panel-title">Sunting</h2>
-                </header>
-                <div class="panel-body">
-                    <form class="form-bordered " action="/konten-simpan" method="POST">
-                        @csrf
-                        <div class="form-group">
-                            <label class="col-md-2 control-label">Isi</label>
-                            <div class="col-md-9">
-                                <textarea id="summernote" name="summernoteInput"></textarea>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="col text-center">
-                                <button type="submit" class="btn btn-primary">Simpan</button>
-                            </div>
-                        </div>
-                        {{-- <input type="hidden" name="idkategori" value="{{$kategori}}"> --}}
-                    </form>
-                    @if (Session::has('status'))
-                    <div class="alert alert-success">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                        {{ Session::get('status') }}
-                    </div>
-                    @endif
-                </div>
-            </section>
-            
-            
-        </div>
-    </div>
+
 @if(!empty($misi))
     <div class="row">
         <div class="col-md-6 col-lg-12 col-xl-6">
@@ -82,17 +57,18 @@
                     <div class="d-flex justify-content-center">
                         @php
                             {{
-                                $isi2 = new \Illuminate\Support\HtmlString($misi->isi); 
+                                $isi2 = new \Illuminate\Support\HtmlString($misi[0]->isi); 
                             }}
                         @endphp
                         <p>{{$isi2}}</p>
                     </div>
                     <div class="col text-center">
-                        <button type="submit" class="btn btn-primary">Edit</button>
+                        <a href="/edit/{{$misi[0]->id}}" class="btn btn-primary">Edit</a>
                     </div>
                 </div>
         </div>
     </div>
+    @endif
     {{-- <script
   src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -105,5 +81,5 @@
             $('#summernote').summernote();
     });
     </script>
-@endif
+
 @endsection

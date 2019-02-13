@@ -7,65 +7,39 @@
                     <a href="#" class="fa fa-caret-down"></a>
                     <a href="#" class="fa fa-times"></a>
                 </div>
-
-                <h2 class="panel-title">Visi</h2>
+            <?php if(count($visi) > 0): ?>
+                <h2 class="panel-title"><?php echo e($visi[0]->judul); ?></h2>
+            <?php else: ?>
+                <h2 class="panel-title"></h2>
+            <?php endif; ?>
+            
             </header>
             <div class="panel-body">
                 <div class="d-flex justify-content-center">
-                    <?php
-                        {{
-                            
-                            $isi = new \Illuminate\Support\HtmlString($visi[0]->isi); 
-                        }}
-                    ?>
-                    <p><?php echo e($isi); ?></p>
+                    <?php if(count($visi) > 0): ?>
+                        <?php
+                            {{
+                                
+                                $isi = new \Illuminate\Support\HtmlString($visi[0]->isi); 
+                            }}
+                        ?>
+                        <p><?php echo e($isi); ?></p>
+                    <?php else: ?>
+                        <p></p>
+                    <?php endif; ?>
+                    
                 </div>
                 <div class="col text-center">
-                    <button type="submit" class="btn btn-primary">Edit</button>
+                    <?php if(count($visi) > 0): ?>
+                        <a href="/edit/<?php echo e($visi[0]->id); ?>" class="btn btn-primary">Edit</a>
+                    <?php else: ?>
+                        <a href="/konten-baru/<?php echo e($idKategori); ?>" class="btn btn-primary">Baru</a>
+                    <?php endif; ?>
                 </div>
             </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-6 col-lg-12 col-xl-6">
-        <section class="panel">
-                <header class="panel-heading">
-                    <div class="panel-actions">
-                        <a href="#" class="fa fa-caret-down"></a>
-                        <a href="#" class="fa fa-times"></a>
-                    </div>
-    
-                    <h2 class="panel-title">Sunting</h2>
-                </header>
-                <div class="panel-body">
-                    <form class="form-bordered " action="/konten-simpan" method="POST">
-                        <?php echo csrf_field(); ?>
-                        <div class="form-group">
-                            <label class="col-md-2 control-label">Isi</label>
-                            <div class="col-md-9">
-                                <textarea id="summernote" name="summernoteInput"></textarea>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="col text-center">
-                                <button type="submit" class="btn btn-primary">Simpan</button>
-                            </div>
-                        </div>
-                        
-                    </form>
-                    <?php if(Session::has('status')): ?>
-                    <div class="alert alert-success">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                        <?php echo e(Session::get('status')); ?>
 
-                    </div>
-                    <?php endif; ?>
-                </div>
-            </section>
-            
-            
-        </div>
-    </div>
 <?php if(!empty($misi)): ?>
     <div class="row">
         <div class="col-md-6 col-lg-12 col-xl-6">
@@ -82,17 +56,18 @@
                     <div class="d-flex justify-content-center">
                         <?php
                             {{
-                                $isi2 = new \Illuminate\Support\HtmlString($misi->isi); 
+                                $isi2 = new \Illuminate\Support\HtmlString($misi[0]->isi); 
                             }}
                         ?>
                         <p><?php echo e($isi2); ?></p>
                     </div>
                     <div class="col text-center">
-                        <button type="submit" class="btn btn-primary">Edit</button>
+                        <a href="/edit/<?php echo e($misi[0]->id); ?>" class="btn btn-primary">Edit</a>
                     </div>
                 </div>
         </div>
     </div>
+    <?php endif; ?>
     
 
     <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
@@ -102,6 +77,6 @@
             $('#summernote').summernote();
     });
     </script>
-<?php endif; ?>
+
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.dashboard-layout', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

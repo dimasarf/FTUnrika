@@ -285,190 +285,195 @@
 					</div>
 				
 					<div class="nano">
-						<div class="nano-content">
+						<div class="nano-content">							
 							<nav id="menu" class="nav-main" role="navigation">
 									<ul class="nav nav-main">
-											<li class="nav-active">
-												<a href="/dashboard">
-													<i class="fa fa-home" aria-hidden="true"></i>
-													<span>Dashboard</span>
-												</a>
-											</li>
-											<li class="nav-parent">
-												<a>
-													<i class="fa fa-copy" aria-hidden="true"></i>
-													<span>Kelola Halaman</span>
-												</a>
-												<ul class="nav nav-children">
-													<li>
-														<a href="pages-signup.html">
-															 Visi Misi
-														</a>
-													</li>
-													<li>
-														<a href="pages-signin.html">
-															 Struktur Organisasi
-														</a>
-													</li>
-													<li>
-														<a href="pages-recover-password.html">
-															 Kurikulum
-														</a>
-													</li>
-													<li>
-														<a href="pages-lock-screen.html">
-															 Daftar Dosen
-														</a>
-													</li>
-												</ul>
-											</li>
-											<li class="nav-parent">
-												<ul class="nav nav-children">
-													<li>
-														<a href="ui-elements-typography.html">
-															 Typography
-														</a>
-													</li>
-													<li>
-														<a href="ui-elements-icons.html">
-															 Icons
-														</a>
-													</li>
-													<li>
-														<a href="ui-elements-tabs.html">
-															 Tabs
-														</a>
-													</li>
-													<li>
-														<a href="ui-elements-panels.html">
-															 Panels
-														</a>
-													</li>
-													<li>
-														<a href="ui-elements-widgets.html">
-															 Widgets
-														</a>
-													</li>
-													<li>
-														<a href="ui-elements-portlets.html">
-															 Portlets
-														</a>
-													</li>
-													<li>
-														<a href="ui-elements-buttons.html">
-															 Buttons
-														</a>
-													</li>
-													<li>
-														<a href="ui-elements-alerts.html">
-															 Alerts
-														</a>
-													</li>
-													<li>
-														<a href="ui-elements-notifications.html">
-															 Notifications
-														</a>
-													</li>
-													<li>
-														<a href="ui-elements-modals.html">
-															 Modals
-														</a>
-													</li>
-													<li>
-														<a href="ui-elements-lightbox.html">
-															 Lightbox
-														</a>
-													</li>
-													<li>
-														<a href="ui-elements-progressbars.html">
-															 Progress Bars
-														</a>
-													</li>
-													<li>
-														<a href="ui-elements-sliders.html">
-															 Sliders
-														</a>
-													</li>
-													<li>
-														<a href="ui-elements-carousels.html">
-															 Carousels
-														</a>
-													</li>
-													<li>
-														<a href="ui-elements-accordions.html">
-															 Accordions
-														</a>
-													</li>
-													<li>
-														<a href="ui-elements-nestable.html">
-															 Nestable
-														</a>
-													</li>
-													<li>
-														<a href="ui-elements-tree-view.html">
-															 Tree View
-														</a>
-													</li>
-													<li>
-														<a href="ui-elements-grid-system.html">
-															 Grid System
-														</a>
-													</li>
-													<li>
-														<a href="ui-elements-charts.html">
-															 Charts
-														</a>
-													</li>
-													<li>
-														<a href="ui-elements-animations.html">
-															 Animations
-														</a>
-													</li>
-													<li>
-														<a href="ui-elements-extra.html">
-															 Extra
-														</a>
-													</li>
-												</ul>
-											</li>
-											<li class="nav-parent">
-												<a>
-													<i class="fa fa-list-alt" aria-hidden="true"></i>
-													<span>Konten</span>
-												</a>
-												<ul class="nav nav-children">
-													<li>
-														<a href="/konten-baru/1">
-															 Baru
-														</a>
-													</li>
-													<li>
-														<a href="/konten-arsip/1">
-															 Arsip Berita
-														</a>
-													</li>
-												</ul>
-											</li>
-											<li class="nav-parent">
-												<a>
-													<i class="fa  fa-edit" aria-hidden="true"></i>
-													<span>Pengumuman</span>
-												</a>
-												<ul class="nav nav-children">
-													<li>
-														<a href="/konten-baru/5">
-															 Baru
-														</a>
-													</li>
-													<li>
-														<a href="/konten-arsip/5">
-															 Arsip Pengumuman
-														</a>
-													</li>
-												</ul>
-											</li>
-										</ul>
-							</nav>
+										<li class="nav-active">
+											<a href="/dashboard">
+												<i class="fa fa-home" aria-hidden="true"></i>
+												<span>Dashboard</span>
+											</a>
+										</li>
+										<li class="nav-parent">
+											<a>
+												<i class="fa fa-copy" aria-hidden="true"></i>
+												<span>Kelola Halaman</span>
+											</a>
+											<ul class="nav nav-children">
+												<li>
+													<a href="/halaman-kelola/2">
+														 Visi Misi
+													</a>
+												</li>
+												<li>
+													<a href="/halaman-kelola/4">
+														 Profil
+													</a>
+												</li>
+												<li>
+													<a href="/halaman-kelola/4">
+														Struktur Organisasi
+													</a>
+												</li>
+												<li>
+													<a href="pages-recover-password.html">
+														 Kurikulum
+													</a>
+												</li>
+												<li>
+													<a href="pages-lock-screen.html">
+														 Daftar Dosen
+													</a>
+												</li>
+											</ul>
+										</li>
+										<li class="nav-parent">
+											<ul class="nav nav-children">
+												<li>
+													<a href="ui-elements-typography.html">
+														 Typography
+													</a>
+												</li>
+												<li>
+													<a href="ui-elements-icons.html">
+														 Icons
+													</a>
+												</li>
+												<li>
+													<a href="ui-elements-tabs.html">
+														 Tabs
+													</a>
+												</li>
+												<li>
+													<a href="ui-elements-panels.html">
+														 Panels
+													</a>
+												</li>
+												<li>
+													<a href="ui-elements-widgets.html">
+														 Widgets
+													</a>
+												</li>
+												<li>
+													<a href="ui-elements-portlets.html">
+														 Portlets
+													</a>
+												</li>
+												<li>
+													<a href="ui-elements-buttons.html">
+														 Buttons
+													</a>
+												</li>
+												<li>
+													<a href="ui-elements-alerts.html">
+														 Alerts
+													</a>
+												</li>
+												<li>
+													<a href="ui-elements-notifications.html">
+														 Notifications
+													</a>
+												</li>
+												<li>
+													<a href="ui-elements-modals.html">
+														 Modals
+													</a>
+												</li>
+												<li>
+													<a href="ui-elements-lightbox.html">
+														 Lightbox
+													</a>
+												</li>
+												<li>
+													<a href="ui-elements-progressbars.html">
+														 Progress Bars
+													</a>
+												</li>
+												<li>
+													<a href="ui-elements-sliders.html">
+														 Sliders
+													</a>
+												</li>
+												<li>
+													<a href="ui-elements-carousels.html">
+														 Carousels
+													</a>
+												</li>
+												<li>
+													<a href="ui-elements-accordions.html">
+														 Accordions
+													</a>
+												</li>
+												<li>
+													<a href="ui-elements-nestable.html">
+														 Nestable
+													</a>
+												</li>
+												<li>
+													<a href="ui-elements-tree-view.html">
+														 Tree View
+													</a>
+												</li>
+												<li>
+													<a href="ui-elements-grid-system.html">
+														 Grid System
+													</a>
+												</li>
+												<li>
+													<a href="ui-elements-charts.html">
+														 Charts
+													</a>
+												</li>
+												<li>
+													<a href="ui-elements-animations.html">
+														 Animations
+													</a>
+												</li>
+												<li>
+													<a href="ui-elements-extra.html">
+														 Extra
+													</a>
+												</li>
+											</ul>
+										</li>
+										<li class="nav-parent">
+											<a>
+												<i class="fa fa-list-alt" aria-hidden="true"></i>
+												<span>Konten</span>
+											</a>
+											<ul class="nav nav-children">
+												<li>
+													<a href="/konten-baru/1">
+														 Baru
+													</a>
+												</li>
+												<li>
+													<a href="/konten-arsip/1">
+														 Arsip Berita
+													</a>
+												</li>
+											</ul>
+										</li>
+										<li class="nav-parent">
+											<a>
+												<i class="fa  fa-edit" aria-hidden="true"></i>
+												<span>Pengumuman</span>
+											</a>
+											<ul class="nav nav-children">
+												<li>
+													<a href="/konten-baru/5">
+														 Baru
+													</a>
+												</li>
+												<li>
+													<a href="/konten-arsip/5">
+														 Arsip Pengumuman
+													</a>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</nav>
 				
 							<hr class="separator" />
 				
@@ -563,28 +568,53 @@
                                     <h2 class="panel-title">Konten Baru</h2>
                                 </header>
                                 <div class="panel-body">
-									<form class="form-bordered " action="/konten-simpan" method="POST">
-										<?php echo csrf_field(); ?>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">Judul</label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control" id="inputDefault" name="judul">
-                                            </div>
-                                        </div>
+									<?php if(!empty($konten)): ?>
+										<form class="form-bordered " action="/konten-edit/<?php echo e($konten->id); ?>" method="POST">
+											<?php echo csrf_field(); ?>
+											<div class="form-group">
+												<label class="col-md-2 control-label">Judul</label>
+												<div class="col-md-9">
+													<input type="text" class="form-control" id="inputDefault" name="judul" value="<?php echo e($konten->judul); ?>">
+												</div>
+											</div>
 
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">Isi</label>
-                                            <div class="col-md-9">
-                                                <textarea id="summernote" name="summernoteInput"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="col text-center">
-                                                <button type="submit" class="btn btn-primary">Simpan Konten</button>
-                                            </div>
-                                        </div>
-                                        <input type="hidden" name="idkategori" value="<?php echo e($kategori); ?>">
-									</form>
+											<div class="form-group">
+												<label class="col-md-2 control-label">Isi</label>
+												<div class="col-md-9">
+												<textarea id="summernote" name="summernoteInput"><?php echo e($konten->isi); ?></textarea>
+												</div>
+											</div>
+											<div class="col-lg-12">
+												<div class="col text-center">
+													<button type="submit" class="btn btn-primary">Simpan Konten</button>
+												</div>
+											</div>
+											<input type="hidden" name="idkategori" value="<?php echo e($konten->idKategori); ?>">
+										</form>
+									<?php else: ?>
+										<form class="form-bordered " action="/konten-simpan" method="POST">
+											<?php echo csrf_field(); ?>
+											<div class="form-group">
+												<label class="col-md-2 control-label">Judul</label>
+												<div class="col-md-9">
+													<input type="text" class="form-control" id="inputDefault" name="judul">
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-2 control-label">Isi</label>
+												<div class="col-md-9">
+													<textarea id="summernote" name="summernoteInput"></textarea>
+												</div>
+											</div>
+											<div class="col-lg-12">
+												<div class="col text-center">
+													<button type="submit" class="btn btn-primary">Simpan Konten</button>
+												</div>
+											</div>
+											<input type="hidden" name="idkategori" value="<?php echo e($kategori); ?>">
+										</form>
+									<?php endif; ?>
 									<?php if(Session::has('status')): ?>
 									<div class="alert alert-success">
 										<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>

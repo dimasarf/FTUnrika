@@ -12,12 +12,8 @@
 */
 
 Route::get('/', 'HalamanDepanController@index');
-Route::get('/visi-misi', function () {
-    return view('visi-misi');
-});
-Route::get('/organisasi', function () {
-    return view('struktur-organisasi');
-});
+Route::get('/visi-misi', 'VisiMisiController@index');
+Route::get('/struktur/{id}', 'StrukturController@index');
 Route::get('/konten/{id}', 'HalamanKontenController@index');
 Route::get('/more/{id}', 'MoreNewsController@index');
 Route::get('/dashboard', function () {
@@ -31,5 +27,7 @@ Route::post('/konten-simpan', 'Dashboard\KontenBaruController@store');
 Route::get('/konten-arsip/{id}', 'Dashboard\KontnArsipController@index');
 
 Route::get('/halaman-kelola/{id}', 'Dashboard\KelolaHalamanController@index');
+Route::get('/edit/{id}','Dashboard\KontenBaruController@indexEditHalaman');
+Route::post('/konten-edit/{id}','Dashboard\KontenBaruController@update');
 
 

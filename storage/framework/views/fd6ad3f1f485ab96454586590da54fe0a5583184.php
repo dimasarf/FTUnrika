@@ -24,7 +24,7 @@
       <a class="nav-link " href="#">Disabled link</a>
     </nav>
     <nav class="navbar navbar-expand-lg navbar-light bg-unrika-kuning sticky-top" id="nav-bottom" style="width: 100%">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
             <img src="/images/UNRIKALOGO.png" alt="" width="90em">          
            
             <span class="ml-3">FAKULTAS TEKNIK</span>
@@ -39,8 +39,8 @@
               <a class="nav-link dropdown-toggle" href="#" id="navbarFakultas" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fakultas <span class="sr-only">(current)</span></a>
               <div class="dropdown-menu bg-unrika-kuning" aria-labelledby="navbarFakultas" style="border: 0px">
                 <a class="dropdown-item" href="/visi-misi">Visi Misi</a>
-                <a class="dropdown-item" href="/organisasi">Struktur Organisasi</a>
-                <a class="dropdown-item" href="#">Daftar Dosen</a>
+                <a class="dropdown-item" href="/struktur/6">Struktur Organisasi</a>
+                <a class="dropdown-item" href="/struktur/7">Daftar Dosen</a>
             </div>
             </li>
             <li class="nav-item dropdown">
