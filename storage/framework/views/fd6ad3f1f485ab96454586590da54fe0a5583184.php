@@ -58,8 +58,21 @@
                 </div>
             </li>
             
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarBerita" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Berita
+                </a>
+              <div class="dropdown-menu bg-unrika-kuning" aria-labelledby="navbarBerita" style="border: 0px">
+                  <a class="dropdown-item" href="/more/1">Berita</a>
+                  <a class="dropdown-item" href="/more/5">Pengumuman</a>
+                  
+              </div>
+          </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Kemahasiswaan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/more/8">Jurnal Dosen</a>
             </li>
           </ul>          
         </div>

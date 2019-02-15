@@ -26,25 +26,57 @@
 										<?php if(!empty($kontens)): ?>
 											<?php $__currentLoopData = $kontens; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $konten): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 											<tr>
-												<td><?php echo e($konten->id); ?></td>
-												<td><?php echo e($konten->judul); ?></td>
+												<td class="id"><?php echo e($konten->id); ?></td>
+												<td class="judul"><?php echo e($konten->judul); ?></td>
 												<td><?php echo e($konten->created_at); ?></td>
 												<td class="actions-hover">
-													<a href=""><i class="fa fa-pencil"></i></a>
-													<a href="" class="delete-row"><i class="fa fa-trash-o"></i></a>
+													<a href="/edit/<?php echo e($konten->id); ?>"><i class="fa fa-pencil"></i></a>
+													<a href="" class="delete-row" ><i class="fa fa-trash-o"></i></a>
 												</td>
 											</tr>
 											<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 										<?php endif; ?>
 									</tbody>
 								</table>
-							</div>
+						</div>
 				</div>
 			</section>
-			
-			
 		</div>
-	</div>
-<?php $__env->stopSection(); ?>
+		<div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <h5 class="modal-title">Modal title</h5>
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				  </button>
+				</div>
+				<div class="modal-body">
+				  <p id="isi">Hapus </p>
+				</div>
+				<div class="modal-footer">
+				  <a href="" class="btn btn-danger" id="hapus">Hapus</a>
+				  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			  </div>
+			</div>
+		</div>
+</div>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+<script>
+$( "body" ).on( "click", ".delete-row", function(e) {
+  e.preventDefault();
+  $('#exampleModal').modal();
+  var id =  $(this).closest("tr").find(".id").text();
+  var judul =  $(this).closest("tr").find(".judul").text();
+  $('#isi').text('Hapus '	+judul+ '?');
+  $("#hapus").attr('href', '/delete/'+id);
 
+});
+</script>
+
+<?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.dashboard-layout', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

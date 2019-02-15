@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use DB;
 use App\konten;
+
 class KontnArsipController extends Controller
 {
     public function index($id)
@@ -13,4 +14,11 @@ class KontnArsipController extends Controller
         $kontens = konten::where('idKategori','=', $id)->get();
         return view('dashboard.dashboard-konten-arsip', compact('kontens'));
     }
+
+    public function delete($id)
+    {
+        konten::destroy($id);
+        return back();
+    }
+
 }

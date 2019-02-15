@@ -311,7 +311,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="/halaman-kelola/4">
+													<a href="/halaman-kelola/6">
 														Struktur Organisasi
 													</a>
 												</li>
@@ -321,7 +321,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="pages-lock-screen.html">
+													<a href="/halaman-kelola/7">
 														 Daftar Dosen
 													</a>
 												</li>
@@ -449,6 +449,24 @@
 												</li>
 												<li>
 													<a href="/konten-arsip/1">
+														 Arsip Berita
+													</a>
+												</li>
+											</ul>
+										</li>
+										<li class="nav-parent">
+											<a>
+												<i class="fa fa-graduation-cap" aria-hidden="true"></i>
+												<span>Jurnal Dosen</span>
+											</a>
+											<ul class="nav nav-children">
+												<li>
+													<a href="/konten-baru/8">
+														 Baru
+													</a>
+												</li>
+												<li>
+													<a href="/konten-arsip/8">
 														 Arsip Berita
 													</a>
 												</li>

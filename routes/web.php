@@ -29,5 +29,9 @@ Route::get('/konten-arsip/{id}', 'Dashboard\KontnArsipController@index');
 Route::get('/halaman-kelola/{id}', 'Dashboard\KelolaHalamanController@index');
 Route::get('/edit/{id}','Dashboard\KontenBaruController@indexEditHalaman');
 Route::post('/konten-edit/{id}','Dashboard\KontenBaruController@update');
+Route::get('/delete/{id}','Dashboard\KontnArsipController@delete');
 
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

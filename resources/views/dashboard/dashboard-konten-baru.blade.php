@@ -456,6 +456,24 @@
 										</li>
 										<li class="nav-parent">
 											<a>
+												<i class="fa fa-graduation-cap" aria-hidden="true"></i>
+												<span>Jurnal Dosen</span>
+											</a>
+											<ul class="nav nav-children">
+												<li>
+													<a href="/konten-baru/8">
+														 Baru
+													</a>
+												</li>
+												<li>
+													<a href="/konten-arsip/8">
+														 Arsip Berita
+													</a>
+												</li>
+											</ul>
+										</li>
+										<li class="nav-parent">
+											<a>
 												<i class="fa  fa-edit" aria-hidden="true"></i>
 												<span>Pengumuman</span>
 											</a>
