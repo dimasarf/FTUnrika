@@ -54,7 +54,7 @@
 			<header class="header">
 				<div class="logo-container">
 					<a href="../" class="logo">
-						<img src="assets/images/logo.png" height="35" alt="JSOFT Admin" />
+						<img src="/assets/images/logo.png" height="35" alt="JSOFT Admin" />
 					</a>
 					<div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
 						<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
@@ -241,7 +241,7 @@
 					<div id="userbox" class="userbox">
 						<a href="#" data-toggle="dropdown">
 							<figure class="profile-picture">
-								<img src="assets/images/!logged-user.jpg" alt="Joseph Doe" class="img-circle" data-lock-picture="assets/images/!logged-user.jpg" />
+								<img src="/assets/images/!logged-user.jpg" alt="Joseph Doe" class="img-circle" data-lock-picture="assets/images/!logged-user.jpg" />
 							</figure>
 							<div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@JSOFT.com">
 								<span class="name">John Doe Junior</span>
@@ -303,6 +303,11 @@
 												<li>
 													<a href="/halaman-kelola/2">
 														 Visi Misi
+													</a>
+												</li>
+												<li>
+													<a href="/slideshow-arsip">
+														SlideShow
 													</a>
 												</li>
 												<li>
@@ -457,6 +462,24 @@
 										<li class="nav-parent">
 											<a>
 												<i class="fa fa-graduation-cap" aria-hidden="true"></i>
+												<span>Info Jurusan</span>
+											</a>
+											<ul class="nav nav-children">
+												<li>
+													<a href="/konten-baru-jurusan">
+														 Baru
+													</a>
+												</li>
+												<li>
+													<a href="/konten-arsip-jurusan">
+														 Arsip Berita
+													</a>
+												</li>
+											</ul>
+										</li>
+										<li class="nav-parent">
+											<a>
+												<i class="fa fa-graduation-cap" aria-hidden="true"></i>
 												<span>Jurnal Dosen</span>
 											</a>
 											<ul class="nav nav-children">
@@ -596,18 +619,41 @@
 												</div>
 											</div>
 
+											@if(!empty($kategoris))
+												<div class="form-group">
+													<label class="col-md-2 control-label">Jurusan</label>
+													<div class="col-md-9">
+														<select class="form-control mb-md" name="idkategori">
+															@foreach($kategoris as $kategori)
+																@if(strstr($kategori->kategori ,'Jurusan') == true)
+																	@if($kategori->id == $konten->idKategori)
+																		<option value="{{$kategori->id}}" selected="selected">{{$kategori->kategori}}</option>
+																	@else
+																		<option value="{{$kategori->id}}">{{$kategori->kategori}}</option>
+																	@endif
+																@endif
+															@endforeach
+														</select>
+													</div>
+												</div>
+											@else
+												<input type="hidden" name="idkategori" value="{{$konten->idKategori}}">
+											@endif
+
 											<div class="form-group">
 												<label class="col-md-2 control-label">Isi</label>
 												<div class="col-md-9">
 												<textarea id="summernote" name="summernoteInput">{{$konten->isi}}</textarea>
 												</div>
 											</div>
+											
+											
 											<div class="col-lg-12">
 												<div class="col text-center">
 													<button type="submit" class="btn btn-primary">Simpan Konten</button>
 												</div>
 											</div>
-											<input type="hidden" name="idkategori" value="{{$konten->idKategori}}">
+											
 										</form>
 									@else
 										<form class="form-bordered " action="/konten-simpan" method="POST">
@@ -618,7 +664,22 @@
 													<input type="text" class="form-control" id="inputDefault" name="judul">
 												</div>
 											</div>
-
+											@if(!empty($kategoris))
+												<div class="form-group">
+													<label class="col-md-2 control-label">Jurusan</label>
+													<div class="col-md-9">
+														<select class="form-control mb-md" name="idkategori">
+															@foreach($kategoris as $kategori)
+																@if(strstr($kategori->kategori ,'Jurusan') == true)
+																	<option value="{{$kategori->id}}">{{$kategori->kategori}}</option>
+																@endif
+															@endforeach
+														</select>
+													</div>
+												</div>
+											@else
+												<input type="hidden" name="idkategori" value="{{$kategori}}">
+											@endif
 											<div class="form-group">
 												<label class="col-md-2 control-label">Isi</label>
 												<div class="col-md-9">
@@ -630,7 +691,7 @@
 													<button type="submit" class="btn btn-primary">Simpan Konten</button>
 												</div>
 											</div>
-											<input type="hidden" name="idkategori" value="{{$kategori}}">
+											
 										</form>
 									@endif
 									@if (Session::has('status'))

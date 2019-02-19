@@ -8,24 +8,34 @@
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="/images/gambar 1.jpg" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="/images/gambar 2.jpg" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="/images/gambar 3.jpg" alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+    @if(!empty($gambars))
+        <div class="carousel-item active">
+          @php
+          {{
+            $img1 = str_replace(str_split('[]"'), "", $gambars[0]->isi);
+          }}
+          @endphp
+          <img class="d-block w-100" src="{{ asset('content_images/' . $gambars[0]->isi) }}" alt="First slide">
+        </div>
+        @for($i = 1; $i< count($gambars); $i++)
+          <div class="carousel-item">
+            <img class="d-block w-100" src="{{ asset('content_images/' .str_replace(str_split('[]"'), "", $gambars[$i]->isi) ) }}" alt="Second slide">
+          </div>
+        @endfor
+        {{-- <div class="carousel-item">
+          <img class="d-block w-100" src="/images/gambar 3.jpg" alt="Third slide">
+        </div> --}}
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+      
+    @endif
 </div>
 {{-- End Carousel --}}
 @endsection
@@ -116,5 +126,9 @@
         <a href="/more/5" class="btn btn-outline-warning btn-block btn-lebih mb-4">Lebih banyak pengumuman</a>
     </div>
   </div>
+  <script>
+  var img = @json($img1);
+  console.log(img);
+  </script>
   {{-- END Pengumuman --}}
   @endsection

@@ -48,11 +48,11 @@
                     Prodi
                   </a>
                 <div class="dropdown-menu bg-unrika-kuning" aria-labelledby="navbarProdi" style="border: 0px">
-                    <a class="dropdown-item" href="#">Teknik Mesin</a>
-                    <a class="dropdown-item" href="#">Teknik Industri</a>
-                    <a class="dropdown-item" href="#">Teknik Arsitektur</a>
-                    <a class="dropdown-item" href="#">Teknik Sipil</a>
-                    <a class="dropdown-item" href="#">Teknik Elektro</a>
+                    <a class="dropdown-item" href="/more/9">Teknik Mesin</a>
+                    <a class="dropdown-item" href="/more/10">Teknik Industri</a>
+                    <a class="dropdown-item" href="/more/12">Teknik Arsitektur</a>
+                    <a class="dropdown-item" href="/more/11">Teknik Sipil</a>
+                    <a class="dropdown-item" href="/more/13">Teknik Elektro</a>
                     
                     
                 </div>

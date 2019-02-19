@@ -1,5 +1,39 @@
 <?php $__env->startSection('konten'); ?>
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+<!-- Vendor CSS -->
+<link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.css" />
+<link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.css" />
+<link rel="stylesheet" href="/assets/vendor/magnific-popup/magnific-popup.css" />
+<link rel="stylesheet" href="/assets/vendor/bootstrap-datepicker/css/datepicker3.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js" integrity="sha256-MZo5XY1Ah7Z2Aui4/alkfeiq3CopMdV/bbkc/Sh41+s=" crossorigin="anonymous"></script>
+<!-- Specific Page Vendor CSS -->
+<link rel="stylesheet" href="/assets/vendor/morris/morris.css" />
 
+<!-- Theme CSS -->
+<link rel="stylesheet" href="/assets/stylesheets/theme.css" />
+
+<!-- Skin CSS -->
+<link rel="stylesheet" href="/assets/stylesheets/skins/default.css" />
+
+<!-- Theme Custom CSS -->
+<link rel="stylesheet" href="/assets/stylesheets/theme-custom.css">
+
+<!-- Head Libs -->
+<script src="/assets/vendor/modernizr/modernizr.js"></script>
+
+<script src="/assets/vendor/jquery-appear/jquery.appear.js"></script>
+<script src="/assets/vendor/jquery-easypiechart/jquery.easypiechart.js"></script>
+<script src="/assets/vendor/flot/jquery.flot.js"></script>
+<script src="/assets/vendor/flot-tooltip/jquery.flot.tooltip.js"></script>
+<script src="/assets/vendor/flot/jquery.flot.pie.js"></script>
+<script src="/assets/vendor/flot/jquery.flot.categories.js"></script>
+<script src="/assets/vendor/flot/jquery.flot.resize.js"></script>
+<script src="/assets/vendor/jquery-sparkline/jquery.sparkline.js"></script>
+<script src="/assets/vendor/raphael/raphael.js"></script>
+<script src="/assets/vendor/morris/morris.js"></script>
+<script src="/assets/vendor/gauge/gauge.js"></script>
+<script src="/assets/vendor/snap-svg/snap.svg.js"></script>
+<script src="/assets/vendor/liquid-meter/liquid.meter.js"></script>
 <div class="row">
 		<div class="col-md-6 col-lg-12 col-xl-6">
 			<div class="row">
@@ -9,19 +43,19 @@
 							<div class="widget-summary">
 								<div class="widget-summary-col widget-summary-col-icon">
 									<div class="summary-icon bg-primary">
-										<i class="fa fa-life-ring"></i>
+										<i class="fa fa-list-alt"></i>
 									</div>
 								</div>
 								<div class="widget-summary-col">
 									<div class="summary">
-										<h4 class="title">Support Questions</h4>
+										<h4 class="title">Total Berita</h4>
 										<div class="info">
-											<strong class="amount">1281</strong>
-											<span class="text-primary">(14 unread)</span>
+											<strong class="amount"><?php echo e($total_berita); ?></strong>
+											
 										</div>
 									</div>
 									<div class="summary-footer">
-										<a class="text-muted text-uppercase">(view all)</a>
+										<a class="text-muted text-uppercase" href="/konten-arsip/1">Lihat Semua</a>
 									</div>
 								</div>
 							</div>
@@ -34,18 +68,18 @@
 							<div class="widget-summary">
 								<div class="widget-summary-col widget-summary-col-icon">
 									<div class="summary-icon bg-secondary">
-										<i class="fa fa-usd"></i>
+										<i class="fa fa-graduation-cap"></i>
 									</div>
 								</div>
 								<div class="widget-summary-col">
 									<div class="summary">
-										<h4 class="title">Total Profit</h4>
+										<h4 class="title">Total Pengumuman</h4>
 										<div class="info">
-											<strong class="amount">$ 14,890.30</strong>
+											<strong class="amount"><?php echo e($total_pengumuman); ?></strong>
 										</div>
 									</div>
 									<div class="summary-footer">
-										<a class="text-muted text-uppercase">(withdraw)</a>
+										<a class="text-muted text-uppercase" href="/konten-arsip/5">Lihat Semua</a>
 									</div>
 								</div>
 							</div>
@@ -58,18 +92,18 @@
 							<div class="widget-summary">
 								<div class="widget-summary-col widget-summary-col-icon">
 									<div class="summary-icon bg-tertiary">
-										<i class="fa fa-shopping-cart"></i>
+										<i class="fa  fa-edit"></i>
 									</div>
 								</div>
 								<div class="widget-summary-col">
 									<div class="summary">
-										<h4 class="title">Today's Orders</h4>
+										<h4 class="title">Total Jurnal</h4>
 										<div class="info">
-											<strong class="amount">38</strong>
+											<strong class="amount"><?php echo e($total_jurnal); ?></strong>
 										</div>
 									</div>
 									<div class="summary-footer">
-										<a class="text-muted text-uppercase">(statement)</a>
+										<a class="text-muted text-uppercase" href="/konten-arsip/8">Lihat Semua</a>
 									</div>
 								</div>
 							</div>
@@ -104,183 +138,109 @@
 		</div>
 	</div>
 
-	<div class="row">						
-		<div class="col-xl-6 col-lg-12">
+	<div class="row">
+		<div class="col-md-6 col-lg-12 col-xl-6">
 			<section class="panel">
-				<header class="panel-heading panel-heading-transparent">
-					<div class="panel-actions">
-						<a href="#" class="fa fa-caret-down"></a>
-						<a href="#" class="fa fa-times"></a>
-					</div>
-
-					<h2 class="panel-title">Company Activity</h2>
-				</header>
 				<div class="panel-body">
-					<div class="timeline timeline-simple mt-xlg mb-md">
-						<div class="tm-body">
-							<div class="tm-title">
-								<h3 class="h5 text-uppercase">November 2013</h3>
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="chart-data-selector" id="salesSelectorWrapper">
+								<h2>Pengunjung Artikel</h2>
+
+								<div id="salesSelectorItems" class="chart-data-selector-items mt-sm">
+									<!-- Flot: Sales JSOFT Admin -->
+									<div class="chart chart-sm" data-sales-rel="JSOFT Admin" id="flotDashSales1" class="chart-active"></div>
+								</div>
 							</div>
-							<ol class="tm-items">
-								<li>
-									<div class="tm-box">
-										<p class="text-muted mb-none">7 months ago.</p>
-										<p>
-											It's awesome when we find a good solution for our projects, JSOFT Admin is <span class="text-primary">#awesome</span>
-										</p>
-									</div>
-								</li>
-								<li>
-									<div class="tm-box">
-										<p class="text-muted mb-none">7 months ago.</p>
-										<p>
-											Checkout! How cool is that!
-										</p>
-										<div class="thumbnail-gallery">
-											<a class="img-thumbnail lightbox" href="assets/images/projects/project-4.jpg" data-plugin-options='{ "type":"image" }'>
-												<img class="img-responsive" width="215" src="assets/images/projects/project-4.jpg">
-												<span class="zoom">
-													<i class="fa fa-search"></i>
-												</span>
-											</a>
-										</div>
-									</div>
-								</li>
-							</ol>
 						</div>
+								
 					</div>
 				</div>
 			</section>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-lg-6 col-md-12">
-			<section class="panel panel-transparent">
+		<div class="col-lg-12 col-md-12">
+			<section class="panel">
 				<header class="panel-heading">
 					<div class="panel-actions">
 						<a href="#" class="fa fa-caret-down"></a>
 						<a href="#" class="fa fa-times"></a>
 					</div>
-
-					<h2 class="panel-title">Global Stats</h2>
+			
+					<h2 class="panel-title">Donut Chart</h2>
+					<p class="panel-subtitle">Donut Chart are functionally identical to pie charts.</p>
 				</header>
 				<div class="panel-body">
-					<div id="vectorMapWorld" style="height: 350px; width: 100%;"></div>
+			
+				<!-- Morris: Donut -->
+					<canvas id="bar-chart" width="800" height="450"></canvas>
+					<script type="text/javascript">
+						var statKonten = <?php echo json_encode($statKonten, 15, 512) ?>;
+						console.log(statKonten);
+						var labelss= [];
+						var datas = [];
+						for(i = 0; i<statKonten.length; i++)
+						{
+							labelss[i] = statKonten[i].date;
+							datas[i]= statKonten[i].views;
+						}
+						console.log(labelss);
+						console.log(datas);
+						var colors = [];
+						while (colors.length < 100) {
+							do {
+								var color = Math.floor((Math.random()*1000000)+1);
+							} while (colors.indexOf(color) >= 0);
+							colors.push("#" + ("000000" + color.toString(16)).slice(-6));
+						}
+						new Chart(document.getElementById("bar-chart"), {
+							type: 'bar',
+							data: {
+								labels: labelss,
+								datasets: [
+									{
+										label: "Dilihat sebanyak",
+										backgroundColor: colors,
+										data: datas
+									}
+								]
+							},
+							options: {
+								legend: { display: false },
+								title: {
+									display: true,
+								}
+							}
+						});
+						
+					</script>
 				</div>
 			</section>
 		</div>
-		<div class="col-lg-6 col-md-12">
-			<section class="panel">
-				<header class="panel-heading panel-heading-transparent">
-					<div class="panel-actions">
-						<a href="#" class="fa fa-caret-down"></a>
-						<a href="#" class="fa fa-times"></a>
-					</div>
-
-					<h2 class="panel-title">Projects Stats</h2>
-				</header>
-				<div class="panel-body">
-					<div class="table-responsive">
-						<table class="table table-striped mb-none">
-							<thead>
-								<tr>
-									<th>#</th>
-									<th>Project</th>
-									<th>Status</th>
-									<th>Progress</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>1</td>
-									<td>JSOFT - Responsive HTML5 Template</td>
-									<td><span class="label label-success">Success</span></td>
-									<td>
-										<div class="progress progress-sm progress-half-rounded m-none mt-xs light">
-											<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
-												100%
-											</div>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td>JSOFT - Responsive Drupal 7 Theme</td>
-									<td><span class="label label-success">Success</span></td>
-									<td>
-										<div class="progress progress-sm progress-half-rounded m-none mt-xs light">
-											<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
-												100%
-											</div>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td>Tucson - Responsive HTML5 Template</td>
-									<td><span class="label label-warning">Warning</span></td>
-									<td>
-										<div class="progress progress-sm progress-half-rounded m-none mt-xs light">
-											<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-												60%
-											</div>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>4</td>
-									<td>Tucson - Responsive Business WordPress Theme</td>
-									<td><span class="label label-success">Success</span></td>
-									<td>
-										<div class="progress progress-sm progress-half-rounded m-none mt-xs light">
-											<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
-												90%
-											</div>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>5</td>
-									<td>JSOFT - Responsive Admin HTML5 Template</td>
-									<td><span class="label label-warning">Warning</span></td>
-									<td>
-										<div class="progress progress-sm progress-half-rounded m-none mt-xs light">
-											<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
-												45%
-											</div>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>6</td>
-									<td>JSOFT - Responsive HTML5 Template</td>
-									<td><span class="label label-danger">Danger</span></td>
-									<td>
-										<div class="progress progress-sm progress-half-rounded m-none mt-xs light">
-											<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-												40%
-											</div>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>7</td>
-									<td>JSOFT - Responsive Drupal 7 Theme</td>
-									<td><span class="label label-success">Success</span></td>
-									<td>
-										<div class="progress progress-sm progress-half-rounded mt-xs light">
-											<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">
-												95%
-											</div>
-										</div>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</section>
-		</div>
+		
 	</div>
+	<script src="/assets/javascripts/ui-elements/examples.charts.js"></script>
+	
+<script>
+	var visitors = <?php echo json_encode($stat, 15, 512) ?>;
+	var datas =[];
+	for(i = 0; i < visitors.length; i++)
+	{
+		datas[i]= [visitors[i].date, visitors[i].views];
+	}
+	console.log(datas);
+	var flotDashSales1Data = [{
+		
+		data: datas,
+		
+		color: "#0088cc"
+	}];
+	console.log(flotDashSales1Data)
+
+	// See: assets/javascripts/dashboard/examples.dashboard.js for more settings.
+
+</script>
+
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.dashboard-layout', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

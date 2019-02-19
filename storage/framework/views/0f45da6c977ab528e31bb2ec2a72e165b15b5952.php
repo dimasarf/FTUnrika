@@ -35,6 +35,20 @@
 												</td>
 											</tr>
 											<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+											<?php elseif(!empty($konten_jurusans)): ?>
+												<?php $__currentLoopData = $konten_jurusans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $konten_jurusan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+													<?php if(strstr($konten_jurusan->kategori, 'Jurusan') == true): ?>
+														<tr>
+															<td class="id"><?php echo e($konten_jurusan->id); ?></td>
+															<td class="judul"><?php echo e($konten_jurusan->judul); ?></td>
+															<td><?php echo e($konten_jurusan->created_at); ?></td>
+															<td class="actions-hover">
+																<a href="/edit/<?php echo e($konten_jurusan->id); ?>"><i class="fa fa-pencil"></i></a>
+																<a href="" class="delete-row" ><i class="fa fa-trash-o"></i></a>
+															</td>
+														</tr>
+													<?php endif; ?>
+												<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 										<?php endif; ?>
 									</tbody>
 								</table>

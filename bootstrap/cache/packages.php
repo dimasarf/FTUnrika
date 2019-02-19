@@ -13,6 +13,17 @@
       0 => 'Fideloper\\Proxy\\TrustedProxyServiceProvider',
     ),
   ),
+  'jenssegers/agent' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Jenssegers\\Agent\\AgentServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Agent' => 'Jenssegers\\Agent\\Facades\\Agent',
+    ),
+  ),
   'laravel/nexmo-notification-channel' => 
   array (
     'providers' => 
@@ -46,6 +57,17 @@
     'providers' => 
     array (
       0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
+    ),
+  ),
+  'pragmarx/tracker' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'PragmaRX\\Tracker\\Vendor\\Laravel\\ServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Tracker' => 'PragmaRX\\Tracker\\Vendor\\Laravel\\Facade',
     ),
   ),
 );

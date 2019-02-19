@@ -36,6 +36,20 @@
 												</td>
 											</tr>
 											@endforeach
+											@elseif(!empty($konten_jurusans))
+												@foreach($konten_jurusans as $konten_jurusan)
+													@if(strstr($konten_jurusan->kategori, 'Jurusan') == true)
+														<tr>
+															<td class="id">{{$konten_jurusan->id}}</td>
+															<td class="judul">{{$konten_jurusan->judul}}</td>
+															<td>{{$konten_jurusan->created_at}}</td>
+															<td class="actions-hover">
+																<a href="/edit/{{$konten_jurusan->id}}"><i class="fa fa-pencil"></i></a>
+																<a href="" class="delete-row" ><i class="fa fa-trash-o"></i></a>
+															</td>
+														</tr>
+													@endif
+												@endforeach
 										@endif
 									</tbody>
 								</table>

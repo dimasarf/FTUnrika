@@ -21,4 +21,9 @@ class KontnArsipController extends Controller
         return back();
     }
 
+    public function indexJurusan()
+    {
+        $konten_jurusans = konten::getContentsAll();
+        return view('dashboard.dashboard-konten-arsip', compact('konten_jurusans'));
+    }
 }

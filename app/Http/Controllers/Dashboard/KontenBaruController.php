@@ -15,6 +15,12 @@ class KontenBaruController extends Controller
         return view('dashboard.dashboard-konten-baru', compact('kategori'));
     }
 
+    public function indexJurusan()
+    {
+        $kategoris = kategori::all();
+        return view('dashboard.dashboard-konten-baru', compact('kategoris'));
+    }
+
     public function store(Request $request)
     {
         $detail = $request->summernoteInput;
@@ -82,6 +88,15 @@ class KontenBaruController extends Controller
     public function indexEditHalaman($id)
     {
         $konten = konten::getDetailContent($id);
-        return view('dashboard.dashboard-konten-baru', compact('kategori', 'konten'));
+        if(strstr($konten->kategori, 'Jurusan')== true)
+        {
+            $kategoris = kategori::all();
+            return view('dashboard.dashboard-konten-baru', compact('kategoris', 'konten'));
+        }
+        else
+        {
+            return view('dashboard.dashboard-konten-baru', compact('konten'));
+        }
+        
     }
 }

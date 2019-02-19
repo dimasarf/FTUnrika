@@ -53,7 +53,7 @@
 			<header class="header">
 				<div class="logo-container">
 					<a href="../" class="logo">
-						<img src="assets/images/logo.png" height="35" alt="JSOFT Admin" />
+						<img src="/assets/images/logo.png" height="35" alt="JSOFT Admin" />
 					</a>
 					<div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
 						<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
@@ -240,7 +240,7 @@
 					<div id="userbox" class="userbox">
 						<a href="#" data-toggle="dropdown">
 							<figure class="profile-picture">
-								<img src="assets/images/!logged-user.jpg" alt="Joseph Doe" class="img-circle" data-lock-picture="assets/images/!logged-user.jpg" />
+								<img src="/assets/images/!logged-user.jpg" alt="Joseph Doe" class="img-circle" data-lock-picture="assets/images/!logged-user.jpg" />
 							</figure>
 							<div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@JSOFT.com">
 								<span class="name">John Doe Junior</span>
@@ -302,6 +302,11 @@
 											<li>
 												<a href="/halaman-kelola/2">
 													 Visi Misi
+												</a>
+											</li>
+											<li>
+												<a href="/slideshow-arsip">
+													SlideShow
 												</a>
 											</li>
 											<li>
@@ -448,6 +453,24 @@
 											</li>
 											<li>
 												<a href="/konten-arsip/1">
+													 Arsip Berita
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li class="nav-parent">
+										<a>
+											<i class="fa fa-graduation-cap" aria-hidden="true"></i>
+											<span>Info Jurusan</span>
+										</a>
+										<ul class="nav nav-children">
+											<li>
+												<a href="/konten-baru-jurusan">
+													 Baru
+												</a>
+											</li>
+											<li>
+												<a href="/konten-arsip-jurusan">
 													 Arsip Berita
 												</a>
 											</li>

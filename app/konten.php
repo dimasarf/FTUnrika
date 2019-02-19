@@ -40,6 +40,14 @@ class konten extends Model
                    ->first();
         return $kontens;
     }
-    
 
+    public static function getContentsAll()
+    {
+        $kontens = DB::table('kontens')
+                   ->join('kategoris','kontens.idKategori', '=','kategoris.id')
+                   ->select('kontens.*', 'kategoris.kategori')
+                   ->orderBy('created_at', 'desc')
+                   ->get();
+        return $kontens;
+    }
 }

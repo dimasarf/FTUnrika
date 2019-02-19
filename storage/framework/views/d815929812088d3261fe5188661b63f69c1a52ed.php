@@ -7,24 +7,32 @@
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="/images/gambar 1.jpg" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="/images/gambar 2.jpg" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="/images/gambar 3.jpg" alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+    <?php if(!empty($gambars)): ?>
+        <div class="carousel-item active">
+          <?php
+          {{
+            $img1 = str_replace(str_split('[]"'), "", $gambars[0]->isi);
+          }}
+          ?>
+          <img class="d-block w-100" src="<?php echo e(asset('content_images/' . $gambars[0]->isi)); ?>" alt="First slide">
+        </div>
+        <?php for($i = 1; $i< count($gambars); $i++): ?>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="<?php echo e(asset('content_images/' .str_replace(str_split('[]"'), "", $gambars[$i]->isi) )); ?>" alt="Second slide">
+          </div>
+        <?php endfor; ?>
+        
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+      
+    <?php endif; ?>
 </div>
 
 <?php $__env->stopSection(); ?>
@@ -116,6 +124,10 @@
         <a href="/more/5" class="btn btn-outline-warning btn-block btn-lebih mb-4">Lebih banyak pengumuman</a>
     </div>
   </div>
+  <script>
+  var img = <?php echo json_encode($img1, 15, 512) ?>;
+  console.log(img);
+  </script>
   
   <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.home-layout', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

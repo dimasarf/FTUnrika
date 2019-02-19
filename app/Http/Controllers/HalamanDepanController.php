@@ -12,6 +12,7 @@ class HalamanDepanController extends Controller
         $beritas = konten::getContents(3, 1);
         $pengumumans = konten::getContents(3, 5);
         $profil = konten::getContents(1, 4);
-        return view('halamanDepan', compact('beritas', 'pengumumans', 'profil'));
+        $gambars = konten::getAllContents(14);
+        return view('halamanDepan', compact('beritas', 'pengumumans', 'profil', 'gambars'));
     }
 }
