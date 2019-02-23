@@ -39,3 +39,7 @@ Route::get('/slideshow-arsip','Dashboard\SlideShowArsipController@index')->name(
 Route::get('/slideshow-baru','Dashboard\SlideShowBaruController@index');
 Route::post('/slideshow-baru','Dashboard\SlideShowBaruController@store');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

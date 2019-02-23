@@ -11,6 +11,7 @@ class MoreNewsController extends Controller
     {
         $kontens = konten::getAllContents($kategori);
         $sideKontens = konten::getContents(5, $kategori);
-        return view('kumpulan-berita', compact('kontens', 'sideKontens'));
+        $gambars = konten::getAllContents(14);
+        return view('kumpulan-berita', compact('kontens', 'sideKontens', 'gambars'));
     }
 }
