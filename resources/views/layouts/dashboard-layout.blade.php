@@ -496,7 +496,7 @@
 									</li>
 									<li class="nav-parent">
 										<a>
-											<i class="fa  fa-edit" aria-hidden="true"></i>
+											<i class="fa fa-edit" aria-hidden="true"></i>
 											<span>Pengumuman</span>
 										</a>
 										<ul class="nav nav-children">
@@ -508,6 +508,29 @@
 											<li>
 												<a href="/konten-arsip/5">
 													 Arsip Pengumuman
+												</a>
+											</li>
+											<li>
+												<a href="/slideshow-baru/15">
+													Pengumuman Gambar
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li class="nav-parent">
+										<a>
+											<i class="fa fa-child" aria-hidden="true"></i>
+											<span>Kemitraan</span>
+										</a>
+										<ul class="nav nav-children">
+											<li>
+												<a href="/kemitraan-baru">
+													 Baru
+												</a>
+											</li>
+											<li>
+												<a href="/kemitraan-arsip">
+													 Arsip Kemitraan
 												</a>
 											</li>
 										</ul>

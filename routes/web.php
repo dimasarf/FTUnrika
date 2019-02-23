@@ -22,7 +22,7 @@ Route::get('/konten-baru/{id}', 'Dashboard\KontenBaruController@index');
 Route::post('/konten-simpan', 'Dashboard\KontenBaruController@store');
 
 
-Route::get('/konten-arsip/{id}', 'Dashboard\KontnArsipController@index');
+Route::get('/konten-arsip/{id}', 'Dashboard\KontnArsipController@index')->name('konten-arsip');
 
 Route::get('/halaman-kelola/{id}', 'Dashboard\KelolaHalamanController@index');
 Route::get('/edit/{id}','Dashboard\KontenBaruController@indexEditHalaman');
@@ -36,8 +36,19 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/konten-baru-jurusan','Dashboard\KontenBaruController@indexJurusan');
 Route::get('/konten-arsip-jurusan', 'Dashboard\KontnArsipController@indexJurusan');
 Route::get('/slideshow-arsip','Dashboard\SlideShowArsipController@index')->name('slideshow.arsip');
-Route::get('/slideshow-baru','Dashboard\SlideShowBaruController@index');
-Route::post('/slideshow-baru','Dashboard\SlideShowBaruController@store');
+
+Route::get('/slideshow-baru/{id}','Dashboard\SlideShowBaruController@index');
+Route::post('/slideshow-baru/{id}','Dashboard\SlideShowBaruController@store');
+
+Route::GET('/kemitraan', 'KemitraanController@index');
+Route::GET('/kemitraan-baru', 'Dashboard\KemitraanBaruController@index');
+Route::post('/kemitraan-baru', 'Dashboard\KemitraanBaruController@store');
+
+Route::GET('/kemitraan-edit/{id}', 'Dashboard\KemitraanBaruController@indexEdit');
+Route::post('/kemitraan-edit/{id}', 'Dashboard\KemitraanBaruController@update');
+
+Route::get('/kemitraan-arsip', 'Dashboard\KemitraanArsipController@index');
+Route::get('/kemitraan-hapus/{id}', 'Dashboard\KemitraanArsipController@delete');
 
 
 Auth::routes();

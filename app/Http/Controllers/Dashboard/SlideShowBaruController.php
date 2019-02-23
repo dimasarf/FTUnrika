@@ -8,15 +8,14 @@ use App\konten;
 
 class SlideShowBaruController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-        return view('dashboard.dashboard-slideshow-baru');
+        $idKategori = $id;
+        return view('dashboard.dashboard-slideshow-baru' ,compact('idKategori'));
     }
 
-    public function store(Request $request)
+    public function store($id,Request $request)
     {
-        $konten = new konten();
-        $konten->judul = "Sideshow";
         if($request->hasFile('image'))
         {
             $names = [];
@@ -25,14 +24,16 @@ class SlideShowBaruController extends Controller
                 $destinationPath = 'content_images/';
                 $filename = $image->getClientOriginalName();
                 $image->move($destinationPath, $filename);
-                array_push($names, $filename);          
-
+                $konten = new konten();
+                $konten->judul = $request->judul;
+                $konten->isi = $filename;
+                $konten->idKategori = $id;
+                $konten->save();
             }
-            $konten->isi = json_encode($names);
         }
-        $konten->idKategori = 14;
-        $konten->save();
-        return redirect()->route('slideshow.arsip');
+        if($id == 14)
+            return redirect()->route('slideshow.arsip');
+        else
+            return redirect()->route('konten-arsip', ['id' => 5]);
     }
-
 }

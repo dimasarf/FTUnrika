@@ -511,6 +511,29 @@
 														 Arsip Pengumuman
 													</a>
 												</li>
+												<li>
+													<a href="/slideshow-baru/15">
+														Pengumuman Gambar
+													</a>
+												</li>
+											</ul>
+										</li>
+										<li class="nav-parent">
+											<a>
+												<i class="fa  fa-child" aria-hidden="true"></i>
+												<span>Kemitraan</span>
+											</a>
+											<ul class="nav nav-children">
+												<li>
+													<a href="/kemitraan-baru">
+														 Baru
+													</a>
+												</li>
+												<li>
+													<a href="/kemitraan-baru">
+														 Arsip Kemitraan
+													</a>
+												</li>
 											</ul>
 										</li>
 									</ul>

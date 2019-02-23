@@ -40,7 +40,7 @@
 									</tbody>
                                 </table>
                                 <div class="col text-center mt-4">
-                                    <a href="/slideshow-baru" class="btn btn-primary">Tambah</a>
+                                    <a href="/slideshow-baru/14" class="btn btn-primary">Tambah</a>
                                 </div>
                             
 						</div>

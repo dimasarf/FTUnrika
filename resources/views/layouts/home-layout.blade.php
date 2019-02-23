@@ -79,7 +79,7 @@
               </div>
           </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Kemahasiswaan</a>
+              <a class="nav-link" href="/kemitraan">Kemitraan</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/more/8">Jurnal Dosen</a>

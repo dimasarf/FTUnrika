@@ -1,6 +1,5 @@
 @extends('layouts.dashboard-layout')
 @section('konten')
-
 <div class="row">
 		<div class="col-md-6 col-lg-12 col-xl-6">
 			<section class="panel">
@@ -10,27 +9,38 @@
 						<a href="#" class="fa fa-times"></a>
 					</div>
 	
-					<h2 class="panel-title">Slide Show Baru</h2>
+					<h2 class="panel-title">Arsip Konten</h2>
 				</header>
 				<div class="panel-body">
-          <form action="/slideshow-baru/{{$idKategori}}" method="POST"  enctype="multipart/form-data">
-						@csrf
-						<div class="form-group">
-            	<label class="col-md-2 control-label">Judul</label>
-              <div class="col-md-9">
-              	<input type="text" class="form-control" id="inputDefault" name="judul">
-              </div>
+						<div class="table-responsive">
+								<table class="table mb-none">
+									<thead>
+										<tr>
+                      <th>#</th>
+                      <th>Instansi</th>
+                      <th>Bidang</th>
+											<th>Tanggal Berlaku</th>
+											<th>Aksi</th>
+										</tr>
+									</thead>
+									<tbody>
+										@if(!empty($kemitraans))
+											@foreach($kemitraans as $kemitraan)
+                        <tr>
+                          <td class="id">{{$kemitraan->id}}</td>
+                          <td class="judul">{{$kemitraan->instansi}}</td>
+                          <td>{{$kemitraan->bidang}}</td>
+                          <td>{{$kemitraan->tglBerlaku}}</td>
+                          <td class="actions-hover">
+                            <a href="/kemitraan-edit/{{$kemitraan->id}}"><i class="fa fa-pencil"></i></a>
+                            <a href="" class="delete-row" ><i class="fa fa-trash-o"></i></a>
+                          </td>
+                      </tr>
+											@endforeach
+										@endif
+									</tbody>
+								</table>
 						</div>
-            <div class="form-group">
-            	<label class="col-md-2 control-label">Gambar</label>
-              <div class="col-md-9">
-              	<input type="file" class="form-control" id="inputDefault" name="image[]" multiple>
-              </div>
-						</div>
-						<div class="col text-center mt-5">
-							<button type="submit" class="btn btn-primary mt-5">Simpan</button>
-						</div>
-          </form>
 				</div>
 			</section>
 		</div>
@@ -65,7 +75,7 @@ $( "body" ).on( "click", ".delete-row", function(e) {
   var id =  $(this).closest("tr").find(".id").text();
   var judul =  $(this).closest("tr").find(".judul").text();
   $('#isi').text('Hapus '	+judul+ '?');
-  $("#hapus").attr('href', '/delete/'+id);
+  $("#hapus").attr('href', '/kemitraan-hapus/'+id);
 
 });
 </script>

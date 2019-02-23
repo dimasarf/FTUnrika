@@ -11,7 +11,16 @@ class KontnArsipController extends Controller
 {
     public function index($id)
     {
-        $kontens = konten::where('idKategori','=', $id)->get();
+        if($id == 5)
+        {
+            $kontens = konten::where('idKategori','=', $id)
+                        ->orWhere('idKategori', '=', 15)
+                        ->get();
+        }
+        else
+        {
+            $kontens = konten::where('idKategori','=', $id)->get();
+        }
         return view('dashboard.dashboard-konten-arsip', compact('kontens'));
     }
 
