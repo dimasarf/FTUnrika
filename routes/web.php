@@ -43,6 +43,8 @@ Route::post('/slideshow-baru/{id}','Dashboard\SlideShowBaruController@store');
 Route::GET('/kemitraan', 'KemitraanController@index');
 Route::GET('/kemitraan-baru', 'Dashboard\KemitraanBaruController@index');
 Route::post('/kemitraan-baru', 'Dashboard\KemitraanBaruController@store');
+Route::GET('/slideshow-edit/{id}', 'Dashboard\SlideShowBaruController@indexEdit');
+Route::POST('/slideshow-edit/{id}', 'Dashboard\SlideShowBaruController@update');
 
 Route::GET('/kemitraan-edit/{id}', 'Dashboard\KemitraanBaruController@indexEdit');
 Route::post('/kemitraan-edit/{id}', 'Dashboard\KemitraanBaruController@update');

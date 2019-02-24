@@ -495,6 +495,24 @@
 										</ul>
 									</li>
 									<li class="nav-parent">
+											<a>
+												<i class="fa  fa-group" aria-hidden="true"></i>
+												<span>Kemahasiswaan</span>
+											</a>
+											<ul class="nav nav-children">
+												<li>
+													<a href="/konten-baru/16">
+														 Baru
+													</a>
+												</li>
+												<li>
+													<a href="/konten-arsip/16">
+														 Arsip Pengumuman
+													</a>
+												</li>
+											</ul>
+									</li>
+									<li class="nav-parent">
 										<a>
 											<i class="fa fa-edit" aria-hidden="true"></i>
 											<span>Pengumuman</span>

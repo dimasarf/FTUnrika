@@ -13,24 +13,46 @@
 					<h2 class="panel-title">Slide Show Baru</h2>
 				</header>
 				<div class="panel-body">
-          <form action="/slideshow-baru/{{$idKategori}}" method="POST"  enctype="multipart/form-data">
+					@if(!empty($slideshow))
+						<form action="/slideshow-edit/{{$slideshow->id}}" method="POST"  enctype="multipart/form-data">
 						@csrf
-						<div class="form-group">
-            	<label class="col-md-2 control-label">Judul</label>
-              <div class="col-md-9">
-              	<input type="text" class="form-control" id="inputDefault" name="judul">
-              </div>
-						</div>
-            <div class="form-group">
-            	<label class="col-md-2 control-label">Gambar</label>
-              <div class="col-md-9">
-              	<input type="file" class="form-control" id="inputDefault" name="image[]" multiple>
-              </div>
-						</div>
-						<div class="col text-center mt-5">
-							<button type="submit" class="btn btn-primary mt-5">Simpan</button>
-						</div>
-          </form>
+							<div class="form-group">
+								<label class="col-md-2 control-label">Judul</label>
+								<div class="col-md-9">
+									<input type="text" class="form-control" id="inputDefault" name="judul" value="{{$slideshow->judul}}">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-2 control-label">Gambar</label>
+								<div class="col-md-9">
+									<img height="150px" width="150px" src="{{ asset('content_images/' .str_replace(str_split('[]"'), "", $slideshow->isi) ) }}">
+									<input type="file" class="form-control" id="inputDefault" name="image[]" multiple>
+								</div>
+							</div>
+							<div class="col text-center mt-5">
+								<button type="submit" class="btn btn-primary mt-5">Simpan</button>
+							</div>
+						</form>
+					@else
+						<form action="/slideshow-baru/{{$idKategori}}" method="POST"  enctype="multipart/form-data">
+							@csrf
+							<div class="form-group">
+								<label class="col-md-2 control-label">Judul</label>
+								<div class="col-md-9">
+									<input type="text" class="form-control" id="inputDefault" name="judul">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-2 control-label">Gambar</label>
+								<div class="col-md-9">
+									<input type="file" class="form-control" id="inputDefault" name="image[]" multiple>
+								</div>
+							</div>
+							<div class="col text-center mt-5">
+								<button type="submit" class="btn btn-primary mt-5">Simpan</button>
+							</div>
+						</form>
+					@endif
 				</div>
 			</section>
 		</div>

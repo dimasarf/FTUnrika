@@ -31,7 +31,7 @@
 												<td class="judul">{{$konten->judul}}</td>
 												<td>{{$konten->created_at}}</td>
 												<td class="actions-hover">
-													<a href="/edit/{{$konten->id}}"><i class="fa fa-pencil"></i></a>
+													<a href="/slideshow-edit/{{$konten->id}}"><i class="fa fa-pencil"></i></a>
 													<a href="" class="delete-row" ><i class="fa fa-trash-o"></i></a>
 												</td>
 											</tr>

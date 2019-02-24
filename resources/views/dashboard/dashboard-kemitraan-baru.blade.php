@@ -26,7 +26,7 @@
 								<label class="col-md-2 control-label">Logo</label>
 								<div class="col-md-9">
 									<img src="/logo_kemitraan/{{$kemitraan->logo}}" alt="Card image cap" width="150px" height="150px">
-									<input type="file" class="form-control" id="inputDefault" name="logo[]" value="{{$kemitraan->logo}}" id="logo">
+									<input type="file" class="form-control " id="inputDefault" name="logo[]" value="{{$kemitraan->logo}}" id="logo">
 								</div>
 							</div>
 							<div class="form-group">

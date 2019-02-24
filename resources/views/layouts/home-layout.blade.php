@@ -84,6 +84,9 @@
             <li class="nav-item">
               <a class="nav-link" href="/more/8">Jurnal Dosen</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/more/16">Kemahasiswaan</a>
+              </li>
           </ul>          
         </div>
     </nav>
