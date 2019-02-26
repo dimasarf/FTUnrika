@@ -461,7 +461,7 @@
 										</li>
 										<li class="nav-parent">
 											<a>
-												<i class="fa fa-graduation-cap" aria-hidden="true"></i>
+												<i class="fa  fa-info" aria-hidden="true"></i>
 												<span>Info Jurusan</span>
 											</a>
 											<ul class="nav nav-children">
@@ -494,6 +494,60 @@
 													</a>
 												</li>
 											</ul>
+										</li>
+										<li class="nav-parent">
+												<a>
+													<i class="fa   fa-book" aria-hidden="true"></i>
+													<span>Kurikulum</span>
+												</a>
+												<ul class="nav nav-children">
+													<li>
+														<a href="/konten-baru/17">
+															 Baru
+														</a>
+													</li>
+													<li>
+														<a href="/konten-arsip/17">
+															 Arsip Kurikulum
+														</a>
+													</li>
+												</ul>
+										</li>
+										<li class="nav-parent">
+												<a>
+													<i class="fa  fa-lightbulb-o" aria-hidden="true"></i>
+													<span>Panduan</span>
+												</a>
+												<ul class="nav nav-children">
+													<li>
+														<a href="/konten-baru/18">
+															 Baru
+														</a>
+													</li>
+													<li>
+														<a href="/konten-arsip/18">
+															 Arsip Panduan
+														</a>
+													</li>
+												</ul>
+										</li>
+										<li class="nav-parent">
+												<a>
+													<i class="fa   fa-briefcase" aria-hidden="true"></i>
+													<span>SAP</span>
+												</a>
+												<ul class="nav nav-children">
+													<li>
+														<a href="/konten-baru/19">
+															 Baru
+														</a>
+													</li>
+													<li>
+														<a href="/konten-arsip/19">
+															 Arsip SAP
+														</a>
+													</li>
+												</ul>
 										</li>
 										<li class="nav-parent">
 												<a>
@@ -651,7 +705,7 @@
                                 </header>
                                 <div class="panel-body">
 									@if(!empty($konten))
-										<form class="form-bordered " action="/konten-edit/{{$konten->id}}" method="POST">
+										<form class="form-bordered " action="/konten-edit/{{$konten->id}}" method="POST" enctype="multipart/form-data">
 											@csrf
 											<div class="form-group">
 												<label class="col-md-2 control-label">Judul</label>
@@ -697,7 +751,7 @@
 											
 										</form>
 									@else
-										<form class="form-bordered " action="/konten-simpan" method="POST">
+										<form class="form-bordered " action="/konten-simpan" method="POST" enctype="multipart/form-data">
 											@csrf
 											<div class="form-group">
 												<label class="col-md-2 control-label">Judul</label>
@@ -725,6 +779,12 @@
 												<label class="col-md-2 control-label">Isi</label>
 												<div class="col-md-9">
 													<textarea id="summernote" name="summernoteInput"></textarea>
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-md-2 control-label">File (jika ada)</label>
+												<div class="col-md-9">
+													<input type="file" class="form-control" id="inputDefault" name="file[]" multiple>
 												</div>
 											</div>
 											<div class="col-lg-12">

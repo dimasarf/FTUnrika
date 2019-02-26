@@ -1,35 +1,40 @@
 @extends('layouts.home-layout')
 @section('berita')
 
+<!--===============================================================================================-->
 {{-- Pengumuman --}}
-<div class="row mt-3 ml-4" style="width: 100%">
-    <div class="col-xs-12 col-lg-12 col-sm-12 col-md-12 align">
+<div class="row mt-3 ml-4" style="width: ">
+    <div class="col-xs-12 col-lg-12 col-sm-12 col-md-12">
       <div class="d-flex justify-content-center">
-          <h3 class="header-section ">Kemitraan</h3>              
+          <h3 class="header-section ">Kemitraan Fakultas Teknik Unrika</h3>              
       </div>
-      <hr>
+      
     </div>
-  </div>
-  <div class="row kumpulan-berita d-flex justify-content-center">
-    @if(!empty($kemitraans))
-      @foreach($kemitraans as $kemitraan)
-        <div class="col-lg-3 col-xs-3 col-sm-3 col-md-3 berita">
-            <div class="card" style="width: 18rem; border-width: 0px;">
-              <img class="card-img-top" src="/logo_kemitraan/{{$kemitraan->logo}}" alt="Card image cap" width="50px" height="150px">
-              <div class="card-body">
-                <h5 class="card-title">{{$kemitraan->instansi}}</h5>
-                <p class="card-text">
-                  {{date('d M Y'), ($kemitraan->tglBerlaku) }} <br>
-                  Bidang :
-                  <br>
-                  {{$kemitraan->bidang }}
-                </p>
-                
-              </div>
-            </div>
-        </div>
-      @endforeach
-    @endif
+</div>
+  <div class="row kumpulan-berita d-flex justify-content-center mt-4" style="">
+      <div class="col-xs-6 col-lg-12 col-sm-6 col-md-12">
+          <table class="table">
+              <thead class="bg-unrika-kuning">
+                <tr>
+                  <th scope="col">Instansi</th>
+                  <th scope="col">Bidang</th>
+                  <th scope="col">Mulai Berlaku</th>
+                </tr>
+              </thead>
+              <tbody>
+                @if(!empty($kemitraans))
+                @foreach($kemitraans as $kemitraan)
+                  <tr>
+                    <td><span class="mr-3"><img src="/logo_kemitraan/{{$kemitraan->logo}}" alt="" srcset="" height="50px;" width="50px"></span>{{$kemitraan->instansi}}</td>
+                    <td>{{$kemitraan->bidang}}</td>
+                    <td>{{$kemitraan->tglBerlaku}}</td>
+                  </tr>
+                @endforeach
+                @endif
+              </tbody>
+            </table>
+      </div>
+   
      
     <hr>
 </div>

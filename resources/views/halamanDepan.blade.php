@@ -1,5 +1,14 @@
 @extends('layouts.home-layout')
 @section('carousel')
+<style>
+
+.carousel,.item,.active{
+   height:50%;
+ }
+.carousel-inner{
+    height:50%;
+}
+</style>
 {{-- Carousel --}}
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -15,11 +24,11 @@
             $img1 = str_replace(str_split('[]"'), "", $gambars[0]->isi);
           }}
           @endphp
-          <img class="d-block w-100" src="{{ asset('content_images/' . $img1) }}" alt="First slide">
+          <img class="d-block w-100" src="{{ asset('content_images/' . $img1) }}" alt="First slide" height="550px">
         </div>
         @for($i = 1; $i< count($gambars); $i++)
           <div class="carousel-item">
-            <img class="d-block w-100" src="{{ asset('content_images/' .str_replace(str_split('[]"'), "", $gambars[$i]->isi) ) }}" alt="Second slide">
+            <img class="d-block w-100" src="{{ asset('content_images/' .str_replace(str_split('[]"'), "", $gambars[$i]->isi) ) }}" alt="Second slide" height="550px">
           </div>
         @endfor
         {{-- <div class="carousel-item">

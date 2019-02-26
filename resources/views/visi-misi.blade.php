@@ -2,12 +2,12 @@
 @section('berita')
 
 {{-- Pengumuman --}}
-<div class="row mt-3 ml-4" style="width: 100%">
+<div class="row mt-3 ml-4" style="width: 90%">
     <div class="col-xs-12 col-lg-12 col-sm-12 col-md-12 align">
       <div class="d-flex">
           <h3 class="header-section ">VISI DAN MISI</h3>              
       </div>
-      <hr>
+      <hr style="margin-right:0%">
     </div>
   </div>
   <div class="row kumpulan-berita d-flex justify-content-center">

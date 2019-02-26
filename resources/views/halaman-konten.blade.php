@@ -1,8 +1,8 @@
 @extends('layouts.home-layout')
 @section('berita')
-<div class="row mt-3 ml-4" style="width: 100%">
+<div class="row mt-3 ml-4" style="width: 90%">
         @if(!empty($konten))
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 mt-4 ">
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9 mt-4 ">
                 <h4 class="judul"> {{$konten->judul}}</h4>
                 <form class="form-inline info-konten">
                     <div class="form-group">
@@ -23,16 +23,23 @@
                         $isi = new \Illuminate\Support\HtmlString($konten->isi); 
                     @endphp
                     {{$isi}}
+                    @if(count($filess) > 1)
+                        @foreach($filess as $file)
+                        <div style="background:#d6d6d6 " class="mt-2">
+                            <a href="/file/{{$file}}" class="ml-3"><span><i class="fas fa-download mr-2"></i></span>{{$file}}</a>
+                        </div>
+                        @endforeach
+                    @endif
                 </p>
             </div>
         @endif
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 mt-4 ">
-            <h5 class="header-widget col-lg-6 mr-auto ml-5">Berita Terkini</h5>
-            <table class="table  tr-berita ml-5 ">
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mt-4">
+            <h5 class="header-widget col-lg-6 col-xs-2 col-sm-2 ">Berita Terkini</h5>
+            <table class="table">
                 <tbody>
                     @if(!empty($sideKontens))
                         @foreach($sideKontens as $sideKonten)
-                        <tr class="tr-berita">
+                        <tr>
                             <td>
                                 <a href="">{{$sideKonten->judul}}</a>
                                 <p>
@@ -49,5 +56,5 @@
                 </tbody>
             </table>
         </div>
-      </div>
+    </div>
 @endsection

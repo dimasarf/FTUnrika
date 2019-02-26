@@ -19,9 +19,9 @@
 </head>
 <body style="width: 100%">
     <nav class="nav justify-content-center bg-unrika-ungu nav-top" style="width: 100%">
-      <a class="nav-link " href="#">Active link</a>
-      <a class="nav-link" href="#">Link</a>
-      <a class="nav-link " href="#">Disabled link</a>
+      <a class="nav-link " href="https://unrika.ac.id/">Website Universitas</a>
+      <a class="nav-link" href="/more/18">Panduan</a>
+      <a class="nav-link " href="/more/17">Kurikulum</a>
     </nav>
     <nav class="navbar navbar-expand-lg navbar-light bg-unrika-kuning sticky-top" id="nav-bottom" style="width: 100%">
         <a class="navbar-brand" href="/">
@@ -36,12 +36,20 @@
         <div class="collapse navbar-collapse p-4 ml-auto" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarAkademik" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Akademik <span class="sr-only">(current)</span></a>
+              <div class="dropdown-menu bg-unrika-kuning" aria-labelledby="navbarAkademik" style="border: 0px">
+                <a class="dropdown-item" href="/more/17">Kurikulum</a>
+                <a class="dropdown-item" href="/more/18">Panduan</a>
+                <a class="dropdown-item" href="/more/19">SAP</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarFakultas" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fakultas <span class="sr-only">(current)</span></a>
               <div class="dropdown-menu bg-unrika-kuning" aria-labelledby="navbarFakultas" style="border: 0px">
                 <a class="dropdown-item" href="/visi-misi">Visi Misi</a>
                 <a class="dropdown-item" href="/struktur/6">Struktur Organisasi</a>
                 <a class="dropdown-item" href="/struktur/7">Daftar Dosen</a>
-            </div>
+              </div>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarProdi" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -114,7 +122,7 @@
               <td style="color: white" class="ml-5 footer">info@unrika.ac.id</td>
             </tr>
           </table>
-        </div>
+        </div> 
         <div class="col-xs-4 col-lg-4 col-sm-4 col-md-4">
           <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
             <h5 class=" mt-3" style="color: white;">Layanan</h5>
@@ -149,7 +157,7 @@
         </div>
         
       </div>
-      {{-- END Footer --}}
+      {{-- END Footer --}} 
       
     </div>
 </body>

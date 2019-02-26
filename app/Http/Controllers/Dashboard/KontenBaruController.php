@@ -23,6 +23,7 @@ class KontenBaruController extends Controller
 
     public function store(Request $request)
     {
+        $konten = new konten();
         $detail = $request->summernoteInput;
         $dom = new \domdocument();
         $dom->loadHtml($detail, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
@@ -41,10 +42,21 @@ class KontenBaruController extends Controller
           file_put_contents($path, $data);
           $img->setattribute('src',$image_name);
         }
+        $files = array();
+        if($request->hasFile('file'))
+        {
+            foreach($request->file('file') as $file)
+            {
+                $destinationPath = 'file/';
+                $filename = $file->getClientOriginalName();
+                $file->move($destinationPath, $filename);
+                $files[] = $filename;
+            }
+            $konten->file = implode("|", $files);
+        }
 
         $detail = $dom->savehtml();
-
-        $konten = new konten();
+        
         $konten->judul = $request->judul;
         $konten->isi = $request->summernoteInput;
         $konten->idKategori = $request->idkategori;
@@ -55,6 +67,8 @@ class KontenBaruController extends Controller
 
     public function update($id, Request $request)
     {
+        $konten = konten::find($id);
+
         $detail = $request->summernoteInput;
         $dom = new \domdocument();
         $dom->loadHtml($detail, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
@@ -74,13 +88,26 @@ class KontenBaruController extends Controller
           $img->setattribute('src',$image_name);
         }
 
+        if($request->hasFile('file'))
+        {
+            $name = [];
+            foreach($request->file('file') as $file)
+            {
+                $destinationPath = 'file/';
+                $filename = $file->getClientOriginalName();
+                $file->move($destinationPath, $filename);
+                array_push($filename);
+            }
+            $konten->file = implode("|", $files);
+        }
+
         $detail = $dom->savehtml();
 
-        $konten = konten::find($id);
         $konten->judul = $request->judul;
         $konten->isi = $request->summernoteInput;
         $konten->idKategori = $request->idkategori;
         $konten->save();
+        return $konten->file;
         $request->session()->flash('status', 'Data Berhasil Disimpan!');
         return back();
     }

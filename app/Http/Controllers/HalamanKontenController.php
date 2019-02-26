@@ -13,6 +13,7 @@ class HalamanKontenController extends Controller
         $konten = konten::getDetailContent($id);
         $sideKontens = konten::getContents(5, $konten->idKategori);
         visitor::store($id);
-        return view('halaman-konten', compact('konten', 'sideKontens'));
+        $filess = explode("|",$konten->file );
+        return view('halaman-konten', compact('konten', 'sideKontens', 'filess'));
     }
 }
